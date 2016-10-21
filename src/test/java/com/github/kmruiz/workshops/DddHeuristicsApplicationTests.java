@@ -3,7 +3,6 @@ package com.github.kmruiz.workshops;
 import com.github.kmruiz.workshops.domain.RegistableUser;
 import com.github.kmruiz.workshops.domain.UserService;
 import com.github.kmruiz.workshops.domain.events.RegisteredUserEvent;
-import com.github.kmruiz.workshops.domain.user.User;
 import com.github.kmruiz.workshops.domain.user.UserImpl;
 import com.github.kmruiz.workshops.infrastructure.IRegistry;
 import com.github.kmruiz.workshops.infrastructure.Registry;
@@ -26,7 +25,7 @@ public class DddHeuristicsApplicationTests {
 	@Test
 	public void shouldRegisterAUser() {
 		RegistableUser user = new UserImpl("1","userName");
-		RegisteredUserEvent event = user.createRegisterdUser("password");
+		RegisteredUserEvent event = user.createRegisteredUser("password");
 
 		IRegistry registry = new Registry();
 		registry.save(event);

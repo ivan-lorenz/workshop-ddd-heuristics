@@ -19,11 +19,8 @@ public class UserImpl implements User, BanneableUser, RegistableUser {
     }
 
     @Override
-    public RegisteredUserEvent createRegisterdUser(String password) {
-        return new RegisteredUserEvent(getUserName(), password);
+    public RegisteredUserEvent createRegisteredUser(String password) {
+        return new RegisteredUserEvent(this.id, this.userName, password);
     }
 
-    public String getUserName() {
-        return userName;
-    }
 }

@@ -1,7 +1,6 @@
 package com.github.kmruiz.workshops.domain;
 
 import com.github.kmruiz.workshops.domain.events.RegisteredUserEvent;
-import com.github.kmruiz.workshops.domain.user.User;
 import com.github.kmruiz.workshops.infrastructure.IRegistry;
 
 public class UserService {
@@ -12,7 +11,7 @@ public class UserService {
     }
 
     public RegisteredUserEvent createRegisteredUser(RegistableUser user) {
-        RegisteredUserEvent event = user.createRegisterdUser("password");
+        RegisteredUserEvent event = user.createRegisteredUser("password");
         registry.save(event);
         return event;
     }

@@ -4,14 +4,16 @@ import java.util.UUID;
 
 public class RegisteredUserEvent implements Event {
 
-    private final UUID id;
+    private final UUID eventId;
+    private final String id;
     private final String userName;
     private final String password;
 
-    public RegisteredUserEvent(String userName, String password) {
+    public RegisteredUserEvent(String id, String userName, String password) {
+        this.id = id;
         this.userName = userName;
         this.password = password;
-        this.id = UUID.randomUUID();
+        this.eventId = UUID.randomUUID();
     }
 
     public String getUserName() {
@@ -22,12 +24,16 @@ public class RegisteredUserEvent implements Event {
         return password;
     }
 
-    public UUID getId() {
-        return id;
+    public UUID getEventId() {
+        return eventId;
     }
 
     @Override
     public String getType() {
         return "RegisteredUser";
+    }
+
+    public String getId() {
+        return id;
     }
 }

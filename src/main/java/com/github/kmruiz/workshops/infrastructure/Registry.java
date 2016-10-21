@@ -23,7 +23,7 @@ public class Registry implements IRegistry<Registry.UserRow> {
 
     @Override
     public void save(RegisteredUserEvent event) {
-        UserRow row = new UserRow(event.getId().toString(), event.getUserName(), event.getPassword());
+        UserRow row = new UserRow(event.getId(), event.getUserName(), event.getPassword());
         userTable.add(row);
     }
 
