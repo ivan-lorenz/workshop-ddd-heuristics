@@ -10,7 +10,7 @@ public class AdminUserImplTest {
     @Test
     public void shouldPermitBanSomeUser() throws Exception {
         final AdminUserImpl sut = new AdminUserImpl("some-admin");
-        final UserImpl user = new UserImpl("some-user");
+        final UserImpl user = new UserImpl("1","some-user");
 
         final BannedUser actual = sut.ban(user);
 

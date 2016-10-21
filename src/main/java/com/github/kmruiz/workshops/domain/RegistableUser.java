@@ -2,6 +2,6 @@ package com.github.kmruiz.workshops.domain;
 
 import com.github.kmruiz.workshops.domain.events.RegisteredUserEvent;
 
-public interface IUser {
+public interface RegistableUser {
     public RegisteredUserEvent createRegisterdUser(String password);
 }
